@@ -113,3 +113,16 @@ class MagicBaidu():
 		except:
 			data = [default]
 		return data
+
+	def get_real_url(self, url):
+		headers = {'user-agent': self.get_random_user_agent()}
+		try:
+			requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
+			r = requests.get(url=url,
+							 headers=headers,
+							 allow_redirects=False,
+							 verify=False,
+							 timeout=30)
+			return r.headers['Location']
+		except:
+			return url

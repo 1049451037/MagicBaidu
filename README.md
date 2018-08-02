@@ -67,3 +67,27 @@ for url in mb.search_url(query='python', start=10):
 '''
 ```
 
+# Get Real URL
+
+```python
+>>> from MagicBaidu import MagicBaidu
+>>> mg = MagicBaidu()
+>>> import time
+>>> for url in mg.search_url(query='python'):
+...     print(mg.get_real_url(url))
+...     time.sleep(1)
+...
+'''
+Output:
+https://www.python.org/
+https://www.python.org/getit
+https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000
+http://www.runoob.com/python/python-tutorial.html
+http://baike.baidu.com/link?url=udBsVTeYGOMZAYpKmncYucFy55A0AaX5CryqRhSUwqsdzENOI72JaO9MbrmdrwY38c9zJARbYSadyBKImtgh6q
+http://www.runoob.com/python/python-intro.html
+http://python.jobbole.com/
+https://www.python.org/downloads/windows/
+http://www.runoob.com/python3/python3-tutorial.html
+http://www.okpython.com/
+'''
+```
