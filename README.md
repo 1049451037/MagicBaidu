@@ -67,7 +67,9 @@ for url in mb.search_url(query='python', start=10):
 '''
 ```
 
-# Get Real URL
+## Get Real URL
+
+Do not do this too frequently.
 
 ```python
 >>> from MagicBaidu import MagicBaidu
