@@ -1,0 +1,11 @@
+README.md
+setup.py
+MagicBaidu/__init__.py
+MagicBaidu/config.py
+MagicBaidu/magic_baidu.py
+MagicBaidu.egg-info/PKG-INFO
+MagicBaidu.egg-info/SOURCES.txt
+MagicBaidu.egg-info/dependency_links.txt
+MagicBaidu.egg-info/requires.txt
+MagicBaidu.egg-info/top_level.txt
+MagicBaidu/data/user_agents.txt
