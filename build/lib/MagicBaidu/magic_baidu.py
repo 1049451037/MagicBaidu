@@ -36,7 +36,7 @@ class MagicBaidu():
 				result['url'] = item.h3.a['href']
 				ss = ''
 				for div in item.find_all('div'):
-					if div.has_attr('class') and div['class'][0].find('abstract') != -1:
+					if div.has_attr('class') and (div['class'][0].find('abstract') != -1 or div['class'][0] == 'c-row'):
 						ss += div.get_text()
 				result['text'] = ss
 				yield result
