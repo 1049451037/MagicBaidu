@@ -43,19 +43,25 @@ class MagicBaidu():
 
 	def search_page(self, query, start=0, pause=2):
 		"""
-		Google search
+		Baidu search
 		:param query: Keyword
 		:param language: Language
 		:return: result
 		"""
 		start = start // 10 * 10
 		time.sleep(pause)
-		url = 'http://www.baidu.com/s?wd=%s&pn=%d'%(query, start)
+		param = { 'wd' : query , 'pn': str(start) }
+		url = 'https://www.baidu.com/s'
 		# Add headers
-		headers = {'user-agent': self.get_random_user_agent()}
+		headers = { 'user-agent': self.get_random_user_agent(), 
+					'host': 'www.baidu.com',
+					'referer': 'https://www.baidu.com/s',
+					'is_referer': 'https://www.baidu.com/s'
+					}
 		try:
 			requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 			r = requests.get(url=url,
+							 params=param,
 							 headers=headers,
 							 allow_redirects=False,
 							 verify=False,
