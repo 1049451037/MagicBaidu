@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='MagicBaidu',
-    version='0.0.7',
+    version='0.0.8',
     description="A baidu search results crawler",
     install_requires=['beautifulsoup4', 'requests>=2.12.4', 'cchardet'],
     author='Qingsong Lv',

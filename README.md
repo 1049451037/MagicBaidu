@@ -72,13 +72,10 @@ for url in mb.search_url(query='python', start=10):
 Do not do this too frequently.
 
 ```python
->>> from MagicBaidu import MagicBaidu
->>> mg = MagicBaidu()
->>> import time
->>> for url in mg.search_url(query='python'):
-...     print(mg.get_real_url(url))
-...     time.sleep(1)
-...
+from MagicBaidu import MagicBaidu
+mb = MagicBaidu()
+for url in mg.search_url(query='python'):
+    print(mg.get_real_url(url))
 '''
 Output:
 https://www.python.org/

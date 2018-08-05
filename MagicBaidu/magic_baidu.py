@@ -120,15 +120,23 @@ class MagicBaidu():
 			data = [default]
 		return data
 
-	def get_real_url(self, url):
-		headers = {'user-agent': self.get_random_user_agent()}
-		try:
-			requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
-			r = requests.get(url=url,
-							 headers=headers,
-							 allow_redirects=False,
-							 verify=False,
-							 timeout=30)
-			return r.headers['Location']
-		except:
-			return url
+	def get_real_url(self, url, pause=0.1):
+		time.sleep(pause)
+		headers = { 'user-agent': self.get_random_user_agent(), 
+					'host': 'www.baidu.com',
+					'referer': 'https://www.baidu.com/s',
+					'is_referer': 'https://www.baidu.com/s'
+					}
+		for _ in range(2):
+			try:
+				requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
+				r = requests.get(url=url,
+								 headers=headers,
+								 allow_redirects=False,
+								 verify=False,
+								 timeout=30)
+				return r.headers['Location']
+			except:
+				time.sleep(0.5)
+		return url
+		
