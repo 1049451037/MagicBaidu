@@ -69,15 +69,13 @@ for url in mb.search_url(query='python', start=10):
 
 ## Get Real URL
 
-Do not do this too frequently.
+Although there is auto-pause in the function, do not do this too frequently.
 
 ```python
-from MagicBaidu import MagicBaidu
-mb = MagicBaidu()
-for url in mg.search_url(query='python'):
-    print(mg.get_real_url(url))
+for url in mb.search_url(query='python'):
+    print(mb.get_real_url(url))
+# Output
 '''
-Output:
 https://www.python.org/
 https://www.python.org/getit
 https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000
