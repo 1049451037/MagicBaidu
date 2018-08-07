@@ -65,7 +65,7 @@ class MagicBaidu():
 							 headers=headers,
 							 allow_redirects=False,
 							 verify=False,
-							 timeout=30)
+							 timeout=10)
 			content = r.content
 			charset = cchardet.detect(content)
 			text = content.decode(charset['encoding'])
@@ -127,14 +127,14 @@ class MagicBaidu():
 					'referer': 'https://www.baidu.com/s',
 					'is_referer': 'https://www.baidu.com/s'
 					}
-		for _ in range(2):
+		for _ in range(3):
 			try:
 				requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 				r = requests.get(url=url,
 								 headers=headers,
 								 allow_redirects=False,
 								 verify=False,
-								 timeout=30)
+								 timeout=_+1)
 				return r.headers['Location']
 			except:
 				time.sleep(0.5)
